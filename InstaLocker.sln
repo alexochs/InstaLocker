@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaLocker", "InstaLocker\InstaLocker.csproj", "{BEC222EC-E1D4-4F45-AF42-61B2B78708A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEC222EC-E1D4-4F45-AF42-61B2B78708A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC222EC-E1D4-4F45-AF42-61B2B78708A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC222EC-E1D4-4F45-AF42-61B2B78708A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC222EC-E1D4-4F45-AF42-61B2B78708A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7C059AE-2970-4D41-BBB1-F58AA418A243}
+	EndGlobalSection
+EndGlobal
