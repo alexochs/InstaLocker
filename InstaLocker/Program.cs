@@ -31,33 +31,40 @@ namespace InstaLocker
             String champion = Console.ReadLine();
             Clipboard.SetText(champion);
             
-
             //wait for input to run script
             Console.WriteLine("\nPress a key to run script");
             Console.ReadKey();
-            System.Threading.Thread.Sleep(200);
 
             //click to get lol window in focus
-            //IRGENDWIE FOKUSIERT DER NICHT AUF LOL KEIN PLAN PROBIER EINFACH MAL ETWAS RUM EINMAL,
-            //FUNKTIONIEREN TUT ABER MOUSECLICK, UND ICH HAB KP WIE MAN SACHEN PASTEN KANN
-
-            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            System.Threading.Thread.Sleep(1000);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            System.Threading.Thread.Sleep(50);
 
             //move cursor from corner to champion filter and click
             Cursor.Position = new Point(Cursor.Position.X + 977, Cursor.Position.Y + 128);
-            System.Threading.Thread.Sleep(1000);
-            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            System.Threading.Thread.Sleep(500);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            System.Threading.Thread.Sleep(100);
 
             //type in champion name
             SendKeys.SendWait("^V");
+            System.Threading.Thread.Sleep(500); //der sleep is wichtig, da die champions erstmal gefiltert werden müssen
 
             //move cursor to champion and click
+            Cursor.Position = new Point(Cursor.Position.X - 490, Cursor.Position.Y + 76);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            System.Threading.Thread.Sleep(250);
 
             //move cursor to lock-in and click
+            Cursor.Position = new Point(Cursor.Position.X + 319, Cursor.Position.Y + 552);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            System.Threading.Thread.Sleep(100);
+
+            //Chat Memes
+            Cursor.Position = new Point(Cursor.Position.X - 656, Cursor.Position.Y + 80);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            System.Threading.Thread.Sleep(100);
+            Clipboard.SetText(">>> InstaLocker by yori x Battleju <<<");
+            SendKeys.SendWait("^V");
+            SendKeys.SendWait("{ENTER}");
         }
     }
 }
